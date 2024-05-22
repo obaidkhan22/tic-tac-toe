@@ -28,7 +28,7 @@ const Board = ({
         ))}
         <div className={`${getStrickClass} ${strick} `}></div>
       </div>
-      {winner && (
+      {(winner || gameState) && (
         <GameState gameState={gameState} winner={winner} onReset={onReset} />
       )}
     </>

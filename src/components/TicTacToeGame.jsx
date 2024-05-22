@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import Board from "./Board";
 import winningPatterns from "../entities/winningPatterns";
 const TicTacToeGame = () => {
-  const [strick, setStrick] = useState("");
-  const [winner, setWinner] = useState("");
-  const [gameState, setGameState] = useState("");
   const defaultTiles = [
     { value: null, className: "bottom-border right-border" },
     { value: null, className: "bottom-border right-border" },
@@ -16,6 +13,10 @@ const TicTacToeGame = () => {
     { value: null, className: " right-border" },
     { value: null },
   ];
+  const [strick, setStrick] = useState("");
+  const [winner, setWinner] = useState("");
+  const [gameState, setGameState] = useState("");
+  const [xIsNext, setXisNext] = useState(true);
   const [tiles, setTiles] = useState(defaultTiles);
   const calculateWinner = (tiles) => {
     for (const { combo, strick } of winningPatterns) {
@@ -30,7 +31,6 @@ const TicTacToeGame = () => {
         setWinner(tileValue1 === "X" ? "X" : "O");
         setStrick(strick);
         setGameState(tileValue1 === "X" ? "X wins." : "O wins.");
-        console.log(strick);
         return;
       }
     }
@@ -44,8 +44,6 @@ const TicTacToeGame = () => {
     calculateWinner(tiles);
   }, [tiles]);
 
-  const [xIsNext, setXisNext] = useState(true);
-
   const handleTileClick = (index) => {
     if (winner || tiles[index].value !== null) return;
     const newTiles = [...tiles];
@@ -58,6 +56,9 @@ const TicTacToeGame = () => {
     setTiles(defaultTiles);
     setStrick("");
     setWinner("");
+    setGameState("");
+    console.log(defaultTiles);
+    console.log(tiles);
   };
   return (
     <>
