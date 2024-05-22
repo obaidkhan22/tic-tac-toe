@@ -6,7 +6,6 @@ h1 {
 .game {
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
 
 .board {
@@ -14,7 +13,7 @@ h1 {
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
   justify-content: center;
-  margin: 0 auto;
+  position: relative;
 }
 
 .tile {
@@ -38,4 +37,57 @@ h1 {
 
 .o-color {
   color: yellow;
+}
+
+.x-strick,
+.o-strick {
+  background-color: chartreuse;
+  position: absolute;
+}
+.o-strick {
+  background-color: yellow;
+}
+.strick-row-1 {
+  width: 94%;
+  height: 5px;
+  top: 41px;
+}
+.strick-row-2 {
+  width: 94%;
+  height: 5px;
+  top: 142px;
+}
+.strick-row-3 {
+  width: 94%;
+  height: 5px;
+  bottom: 49px;
+}
+.strick-column-1 {
+  height: 100%;
+  width: 5px;
+  left: 43.5px;
+}
+.strick-column-2 {
+  height: 100%;
+  width: 5px;
+  left: 143.5px;
+}
+.strick-column-3 {
+  height: 100%;
+  width: 5px;
+  right: 47.5px;
+}
+
+.strick-diagonal-1 {
+  width: 100%;
+  height: 5px;
+  top: 50%;
+  left: 5px;
+  transform: skewY(45deg);
+}
+.strick-diagonal-2 {
+  width: 100%;
+  height: 5px;
+  top: 46.6%;
+  transform: skewY(-45deg);
 }

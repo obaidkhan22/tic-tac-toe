@@ -1,6 +1,7 @@
 import React from "react";
 
-const Board = ({ tiles, handleTileClick }) => {
+const Board = ({ tiles, handleTileClick, strick, winner }) => {
+  const getStrickClass = winner === "X" ? "x-strick" : "o-strick";
   return (
     <div className="board">
       {tiles.map((tile, index) => (
@@ -14,6 +15,7 @@ const Board = ({ tiles, handleTileClick }) => {
           {tile.value}
         </div>
       ))}
+      <div className={`${getStrickClass} ${strick} `}></div>
     </div>
   );
 };
