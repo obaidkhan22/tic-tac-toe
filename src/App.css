@@ -21,5 +21,21 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
+  font-size: 5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.right-border {
+  border-right: 0.8rem solid #505670;
+}
+.bottom-border {
+  border-bottom: 0.8rem solid #505670;
+}
+.x-color {
+  color: chartreuse;
+}
+
+.o-color {
+  color: yellow;
 }

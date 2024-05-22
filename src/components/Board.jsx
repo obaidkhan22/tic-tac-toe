@@ -1,11 +1,17 @@
 import React from "react";
 
-const Board = ({ tiles }) => {
+const Board = ({ tiles, handleTileClick }) => {
   return (
     <div className="board">
       {tiles.map((tile, index) => (
-        <div key={index} className={`tile ${tile.className}`}>
-          X
+        <div
+          key={index}
+          className={`tile ${tile.className} ${
+            tile.value && tile.value === "X" ? "x-color" : "o-color"
+          }`}
+          onClick={() => handleTileClick(index)}
+        >
+          {tile.value}
         </div>
       ))}
     </div>

@@ -13,11 +13,19 @@ const TicTacToeGame = () => {
     { value: null, className: " right-border" },
     { value: null },
   ]);
+  const [xIsNext, setXisNext] = useState(true);
+
+  const handleTileClick = (index) => {
+    const newTiles = [...tiles];
+    tiles[index].value = xIsNext ? "X" : "O";
+    setXisNext(!xIsNext);
+    setTiles(newTiles);
+  };
   return (
     <>
       <h1>Tic-Tac-Toe Game</h1>
       <div className="game">
-        <Board tiles={tiles} />
+        <Board tiles={tiles} handleTileClick={handleTileClick} />
       </div>
     </>
   );
