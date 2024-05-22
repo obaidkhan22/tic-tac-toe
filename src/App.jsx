@@ -1,7 +1,8 @@
+import TicTacToeGame from "./components/TicTacToeGame";
 import "./App.css";
 
 function App() {
-  return <h1>Tac-Tac-Toe</h1>;
+  return <TicTacToeGame />;
 }
 
 export default App;
