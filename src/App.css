@@ -5,7 +5,8 @@ h1 {
 
 .game {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .board {
@@ -39,8 +40,18 @@ h1 {
   color: yellow;
 }
 
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+}
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.4;
+}
+
 .x-strick,
 .o-strick {
+  width: 100%;
   background-color: chartreuse;
   position: absolute;
 }
@@ -48,17 +59,14 @@ h1 {
   background-color: yellow;
 }
 .strick-row-1 {
-  width: 94%;
   height: 5px;
   top: 41px;
 }
 .strick-row-2 {
-  width: 94%;
   height: 5px;
   top: 142px;
 }
 .strick-row-3 {
-  width: 94%;
   height: 5px;
   bottom: 49px;
 }
@@ -90,4 +98,43 @@ h1 {
   height: 5px;
   top: 46.6%;
   transform: skewY(-45deg);
+}
+.state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  margin-top: 30px;
+  color: #ccc;
+}
+
+.play-btn {
+  height: 40px;
+  padding: 0rem 2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #0b3954;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease-out;
+}
+
+.play-btn:hover {
+  background-color: #0e496b;
+}
+
+.x-win,
+.o-win {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.x-win {
+  color: chartreuse;
+}
+
+.o-win {
+  color: yellow;
 }
